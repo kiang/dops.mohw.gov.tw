@@ -8,14 +8,20 @@ This crawler fetches ODS (OpenDocument Spreadsheet) files from specific MOHW dat
 
 ### Supported Datasets
 
+Current datasets (2019-2023):
 - **157217**: 家庭暴力資料集 (Family Violence Dataset)
 - **152223**: 性侵害案件資料集 (Sexual Assault Cases Dataset)
 - **156470**: 兒童及少年保護案件資料集 (Child and Youth Protection Cases Dataset)
 
+Older datasets (2014-2018):
+- **147093**: 成人保護級家庭暴力案件資料集 (merged with 157217)
+- **147094**: 性侵害案件資料 (merged with 152223)
+- **147095**: 兒童及少年保護案件資料集 (merged with 156470)
+
 ## Features
 
 - Fetches dataset metadata via Taiwan Open Data API
-- Downloads ODS files for years 2019-2023 (Taiwan years 108-112)
+- Downloads ODS files for years 2014-2023 (Taiwan years 103-112)
 - Converts ODS to CSV using LibreOffice headless mode
 - Organizes output in `raw/{dataset_id}/{year}.csv` structure
 - Handles Taiwan year (ROC) to Western year conversion
@@ -61,6 +67,12 @@ To test with a single dataset:
 
 ```bash
 python3 test_single.py
+```
+
+To fetch older data (2014-2018):
+
+```bash
+python3 crawler_older.py
 ```
 
 ## Output Structure
