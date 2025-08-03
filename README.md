@@ -19,6 +19,7 @@ This crawler fetches ODS (OpenDocument Spreadsheet) files from specific MOHW dat
 - Converts ODS to CSV using LibreOffice headless mode
 - Organizes output in `raw/{dataset_id}/{year}.csv` structure
 - Handles Taiwan year (ROC) to Western year conversion
+- Skips downloading if target CSV file already exists (incremental updates)
 
 ## Requirements
 

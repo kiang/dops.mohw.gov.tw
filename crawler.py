@@ -185,6 +185,11 @@ class TaiwanOpenDataCrawler:
             ods_path = os.path.join(ods_dir, f"{link_info['year']}.ods")
             csv_path = os.path.join(csv_dir, f"{link_info['year']}.csv")
             
+            # Check if CSV already exists
+            if os.path.exists(csv_path):
+                print(f"CSV file already exists: {csv_path}, skipping download")
+                continue
+            
             # Download ODS
             if self.download_ods_file(link_info['url'], ods_path):
                 # Convert to CSV
